@@ -1,4 +1,3 @@
-import react from 'react';
 
 const FooterSection=()=>{
     return(
@@ -6,4 +5,4 @@ const FooterSection=()=>{
     )
 }
 
-export default FooterSection
+export default FooterSection;

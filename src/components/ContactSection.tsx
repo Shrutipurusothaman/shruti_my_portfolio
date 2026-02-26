@@ -1,4 +1,3 @@
-import react from 'react';
 
 const ContactSection =()=>{
 
@@ -7,4 +6,4 @@ const ContactSection =()=>{
     )
 }
 
-export default ContactSection
+export default ContactSection;

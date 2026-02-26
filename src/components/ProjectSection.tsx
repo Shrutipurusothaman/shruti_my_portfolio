@@ -1,4 +1,3 @@
-import React from 'react';
 import swiggy from "../assets/swiggy-clone-img.png";
 import invoice from "../assets/invoice-img.png";
 

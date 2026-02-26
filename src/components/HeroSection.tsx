@@ -1,4 +1,3 @@
-import React from 'react'
 import myPic from '../assets/My-picture.jpg'
 
 const HeroSection = () => {
