@@ -17,7 +17,7 @@ function App() {
     return <PreLoader />;
   }
   return (
-    <div className="bg-gray-950 min-h-screen w-full relative overflow-x-hidden">
+    <div className="bg-slate-950 min-h-screen w-full relative overflow-x-hidden">
        <Header />
        <main>
          <HeroSection />
