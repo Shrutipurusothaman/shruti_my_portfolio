@@ -1,7 +1,7 @@
 # My_Portfolio:
 This is my personal portfolio built to showcase my skills and featured projects.
 
-##TECH STACK:
+## TECH STACK:
 + React
 + TypeScript
 + Tailwind CSS
