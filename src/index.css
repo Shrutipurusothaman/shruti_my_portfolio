@@ -1,1 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 @import "tailwindcss";
+@theme{
+    --font-heading:"Archivo Black",sans-serif;
+    --color-brand-blue: #27F5EB;
+    --animation-blob: blob 7s infinite;
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+}
+
+@layer base {
+  html, body, #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #111827; 
+  }
+}
