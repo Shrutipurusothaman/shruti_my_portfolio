@@ -17,5 +17,7 @@ This is my personal portfolio built to showcase my skills and featured projects.
 + It helps developers to catch errors during development rather than at runtime.
 
 # Tailwind CSS:
-+ A utility based CSS framework that enables developers to build custom user interfaces rapidly by using pre-defined, single-purpose utility classes directly within their HTML markup
++ A utility based CSS framework that enables developers to build custom user interfaces rapidly by using pre-defined, single-purpose utility classes directly within their HTML markup.
 
+## Web Hosting Link:
+https://shruti-my-portfolio.vercel.app/
