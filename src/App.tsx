@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import PreLoader from './components/PreLoader'; 
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import SkillSection from './components/SkillSection';
+import ProjectSection from './components/ProjectSection';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -22,6 +22,7 @@ function App() {
        <main>
          <HeroSection />
          <SkillSection />
+         <ProjectSection />
        </main>
     </div>
   );

@@ -1,6 +1,5 @@
 import React from 'react'
 import myPic from '../assets/My-picture.jpg'
-import { useState } from 'react';
 
 const HeroSection = () => {
   const scrollToNext = () => {
