@@ -6,83 +6,90 @@ const Header = () => {
 
   const navLinks = [
     { name: 'ABOUT ME', href: '#about-me' },
-    { name: 'TOOLKIT', href: '#' },
-    { name: 'PROJECTS', href: '#' },
-    { name: 'BLOGS', href: '#' },
-    { name: 'REACH OUT', href: '#' },
+    { name: 'TOOLKIT', href: '#toolkit' },
+    { name: 'PROJECTS', href: '#projects' },
+    { name: 'BLOGS', href: '#blogs' },
+    { name: 'REACH OUT', href: '#contact' }, 
   ];
 
   return (
-    <nav className='sticky top-0 z-[100] flex flex-row justify-between items-center px-6 md:px-10 py-6 bg-gray-900/80 backdrop-blur-md border-b border-white/5 shadow-[0_8px_30px_rgb(0,0,0,0.4)]'>
+    <>
+      <nav className='sticky top-0 z-[100] flex flex-row justify-between items-center px-6 md:px-10 py-6 bg-gray-900/80 backdrop-blur-md border-b border-white/5 shadow-lg'>
+        <div className='font-heading text-lg text-brand-blue cursor-pointer'>
+          <a href="#"> . SHRUTI /</a>
+        </div>
 
-      {/* LOGO */}
-      <div className='relative group font-heading text-lg text-brand-blue cursor-pointer'>
-        <a href="#"> . SHRUTI /</a>
-        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-blue transition-all duration-500 ease-out group-hover:w-full"></span>
-      </div>
+        <div className='hidden md:flex flex-row gap-8'>
+          {navLinks.map((link) => (
+            <a key={link.name} href={link.href} className='font-heading text-sm text-brand-blue hover:text-white transition-all'>
+              {link.name}
+            </a>
+          ))}
+        </div>
 
-      {/* DESKTOP NAV (Hidden on Mobile) */}
-      <div className='hidden md:flex flex-row gap-8'>
-        {navLinks.map((link) => (
-          <div key={link.name} className='relative group font-heading text-sm text-brand-blue cursor-pointer'>
-            <a href={link.href}>{link.name}</a>
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-blue transition-all duration-500 ease-out group-hover:w-full"></span>
-          </div>
-        ))}
-      </div>
+        {/* OPEN BUTTON (HAMBURGER) */}
+        <button
+          className='md:hidden text-brand-blue text-2xl z-[110]' 
+          onClick={() => setIsOpen(true)}
+        >
+          ☰
+        </button>
+      </nav>
 
-      {/* MOBILE HAMBURGER BUTTON (Hidden on Desktop) */}
-      <button
-        className='md:hidden text-brand-blue text-2xl focus:outline-none'
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? '✕' : '☰'}
-      </button>
-
-      {/* MOBILE MENU OVERLAY */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {isOpen && (
-          <>
+          <div className="fixed inset-0 z-[9999] md:hidden">
+            {/* Dark Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-[110] bg-black/60 backdrop-blur-sm md:hidden"
+              className="absolute inset-0 bg-black/95 backdrop-blur-md"
             />
-            {/*side menu*/}
+            
+            {/* SIDE MENU */}
             <motion.div
               initial={{ x: '100%' }} 
               animate={{ x: 0 }}      
               exit={{ x: '100%' }}    
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className='fixed top-0 right-0 z-[120] w-[75%] max-w-[300px] h-full bg-gray-950 border-l border-white/10 p-10 flex flex-col gap-8 md:hidden shadow-[-10px_0_30px_rgba(0,0,0,0.5)]'
+              transition={{ type: 'tween', duration: 0.3 }}
+              style={{ backgroundColor: '#020617' }} 
+              className='absolute top-0 right-0 w-[80%] max-w-[300px] h-full border-l border-white/10 p-10 flex flex-col shadow-[-20px_0_50px_rgba(0,0,0,1)]'
             >
-              <button
-                className="self-end text-brand-blue text-3xl mb-4"
-                onClick={() => setIsOpen(false)}
-              >
-                ✕
-              </button>
-
-              {navLinks.map((link, index) => (
-                <motion.a
-                  key={link.name}
-                  href={link.href}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className='text-xl font-heading text-brand-blue hover:text-white transition-all'
+              {/* CLOSE BUTTON */}
+              <div className="flex justify-end mb-8">
+                <button
+                  className="text-brand-blue text-3xl p-2 hover:scale-110 transition-transform"
                   onClick={() => setIsOpen(false)}
+                  aria-label="Close menu"
                 >
-                  {link.name}
-                </motion.a>
-              ))}
+                  ✕
+                </button>
+              </div>
+              
+              {/* LINKS */}
+              <div className="flex flex-col gap-10">
+                {navLinks.map((link, index) => (
+                  <motion.a
+                    key={link.name}
+                    href={link.href}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className='text-2xl font-heading text-brand-blue hover:text-white transition-all'
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </motion.a>
+                ))}
+              </div>
             </motion.div>
-          </>
+          </div>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   )
 }
 

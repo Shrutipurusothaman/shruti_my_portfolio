@@ -2,7 +2,7 @@ import myPic from '../assets/My-picture.jpg'
 
 const HeroSection = () => {
   const scrollToNext = () => {
-    const nextSection = document.getElementById('about-me');
+    const nextSection = document.getElementById('toolkit');
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
     }

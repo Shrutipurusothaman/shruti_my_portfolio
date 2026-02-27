@@ -1,5 +1,7 @@
 import swiggy from "../assets/swiggy-clone-img.png";
 import invoice from "../assets/invoice-img.png";
+import portfolio from "../assets/React-Portfolio.png";
+import feedback from "../assets/Feedback.png";
 
 const projects = [
   {
@@ -20,7 +22,7 @@ const projects = [
   },
   {
     name: "REACT PORTFOLIO",
-    image: "/project2.jpg",
+    image: portfolio,
     desc: "An interactive Portfolio built with React and TypeScript to showcase my technical identity and projects.",
     learnings: "Strengthened my TypeScript for type-safe code and explored advanced CSS animations to make the UI feel alive.",
     tech: ["REACT", "TYPESCRIPT", "TAILWIND"],
@@ -28,7 +30,7 @@ const projects = [
   },
    {
     name: "FEEDBACK MANAGEMENT SYSTEM",
-    image: "/project2.jpg",
+    image: feedback,
     desc: "A full-stack application for collecting and organizing user feedback using a React frontend and a Laravel backend",
     learnings: "Learned the Full-Stack handshake—connecting a decoupled frontend to a backend API and managing database CRUD operations.",
     tech: ["REACT", "LARAVEL", "MYSQL"],

@@ -4,6 +4,9 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import SkillSection from './components/SkillSection';
 import ProjectSection from './components/ProjectSection';
+import Blogs from './components/Blogs';
+import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -23,6 +26,9 @@ function App() {
          <HeroSection />
          <SkillSection />
          <ProjectSection />
+         <Blogs />
+         <ContactSection />
+         <Footer />
        </main>
     </div>
   );
